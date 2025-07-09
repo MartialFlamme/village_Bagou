@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Nos projets communautaires{% endblock %}
+{% block content %}
+<br><br>
+<div class="max-w-6xl mx-auto px-4">
+    <h1 class="text-3xl font-bold text-sky-800 mb-6">🚧 Projets de développement</h1>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for proj in projets %}
+        <div class="bg-white rounded shadow hover:shadow-lg p-4">
+            <img src="{% static proj.image %}" alt="{{ proj.titre }}" class="h-40 w-full object-cover rounded mb-3">
+            <h2 class="text-lg font-semibold text-sky-700">{{ proj.titre }}</h2>
+            <span class="inline-block mt-2 px-2 py-1 text-xs rounded bg-sky-100 text-sky-800 font-medium">{{ proj.etat }}</span>
+            <a href="{% url 'projets:detail_projet' %}" class="block mt-3 text-sm text-sky-600 hover:underline font-medium">Voir le projet</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}👤 {{ personne.nom }} | Détail{% endblock %}
+{% block content %}
+<section class="max-w-4xl mx-auto px-4 py-10">
+    <div class="bg-white rounded-lg shadow-lg p-6">
+        <div class="flex flex-col sm:flex-row items-center">
+            <img src="{% static personne.photo %}" alt="{{ personne.nom }}" class="w-40 h-40 object-cover rounded-full border-4 border-green-700 mb-4 sm:mb-0 sm:mr-6">
+            <div>
+                <h1 class="text-3xl font-bold text-green-800">{{ personne.nom }}</h1>
+                <p class="text-lg text-gray-600 mt-1">🎖️ <em>{{ personne.fonction }}</em></p>
+            </div>
+        </div>
+        <div class="mt-6 text-gray-800 leading-relaxed text-justify">
+            <h2 class="text-xl font-semibold mb-2 text-green-700">📚 Biographie</h2>
+            <p>{{ personne.biographie }}</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

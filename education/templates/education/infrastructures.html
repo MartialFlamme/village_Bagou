@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Infrastructures{% endblock %}
+{% block content %}
+<br><br>
+<div class="max-w-6xl mx-auto px-4">
+    <h1 class="text-3xl font-bold text-teal-800 mb-6">🏗️ Infrastructures récentes</h1>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for item in infrastructures %}
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4">
+            <img src="{% static item.image %}" alt="{{ item.type }}" class="rounded mb-3 w-full h-40 object-cover">
+            <h2 class="text-lg font-semibold text-teal-700">{{ item.type }}</h2>
+            <p class="text-sm text-gray-700 mt-1">{{ item.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

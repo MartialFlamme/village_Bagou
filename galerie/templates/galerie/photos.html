@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Galerie Photo - Bangoulap{% endblock %}
+
+{% block content %}
+<section class="bg-white py-12">
+    <div class="max-w-6xl mx-auto px-4">
+        <h1 class="text-3xl font-bold text-green-800 text-center mb-6">Galerie Photo</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {% for photo in photos %}
+                <div class="rounded overflow-hidden shadow hover:shadow-lg transition duration-300">
+                    <img src="{% static photo.url %}" alt="{{ photo.alt }}" class="w-full h-56 object-cover">
+                    <div class="p-4 bg-green-50">
+                        <p class="text-sm text-gray-700 text-center">{{ photo.alt }}</p>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="text-center col-span-3 text-gray-500">Aucune photo disponible pour le moment.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

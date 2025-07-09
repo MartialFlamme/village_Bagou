@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^4.1.11"
+  },
+  "name": "bangoulap_site",
+  "description": "Projet Django pour promouvoir l'identité culturelle, historique et sociale du village Bangoulap, en intégrant une interface publique moderne, un tableau de bord d’administration stylisé, et des fonctionnalités communautaires.",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

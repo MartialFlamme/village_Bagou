@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Personnalités de Bangoulap{% endblock %}
+{% block content %}
+<section class="max-w-6xl mx-auto px-4 py-10">
+    <h1 class="text-3xl font-bold text-green-800 mb-8">👥 Nos personnalités marquantes</h1>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        {% for personne in personnalites %}
+        <a href="{% url 'personnalites:detail' slug=personne.slug %}" class="group block bg-white rounded-lg shadow hover:shadow-xl transition p-4 text-center">
+            <img src="{% static personne.photo %}" alt="{{ personne.nom }}" class="w-32 h-32 mx-auto object-cover rounded-full border-4 border-green-700 group-hover:scale-105 transition">
+            <h2 class="mt-4 text-lg font-semibold text-green-900">{{ personne.nom }}</h2>
+            <p class="text-sm text-gray-600 italic">{{ personne.fonction }}</p>
+        </a>
+        {% empty %}
+        <p class="text-gray-600 italic">Aucune personnalité enregistrée pour le moment.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
