@@ -5,5 +5,5 @@ app_name = 'associations'
 
 urlpatterns = [
     path('', views.liste_associations, name='liste'),
-    path('detail/<slug:slug>/', views.detail_association, name='detail'),
+    path('<int:id>/', views.detail_association, name='detail'),
 ]

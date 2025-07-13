@@ -1,6 +1,5 @@
-# contact/views.py
 from django.shortcuts import render
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from django.conf import settings
 from .forms import ContactForm
 
@@ -20,13 +19,14 @@ def contact_view(request):
                 f"💬 Message :\n{message}"
             )
 
-            send_mail(
-                subject=f"📩 Message de contact depuis le site de Bangoulap",
-                message=full_message,
-                from_email=settings.EMAIL_HOST_USER,
-                recipient_list=['ketchadjiguymartial@gmail.com'],
-                fail_silently=False,
+            email_message = EmailMessage(
+                subject="📩 Message de contact depuis le site de Bangoulap",
+                body=full_message,
+                from_email=settings.EMAIL_HOST_USER,  # adresse technique
+                to=['ketchadjiguymartial@gmail.com'],
+                reply_to=[email]  # Ajouter l'adresse de l'expéditeur pour pouvoir y répondre directement
             )
+            email_message.send(fail_silently=False)
             sent = True
     else:
         form = ContactForm()

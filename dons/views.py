@@ -14,12 +14,13 @@ def formulaire_don(request):
             # Générer le contenu HTML du mail
             html_message = render_to_string('dons/email_confirmation.html', {'don': don})
 
-            # Créer et envoyer l'e-mail HTML
+            # Créer et envoyer l'e-mail avec possibilité de répondre au donateur
             email = EmailMessage(
                 subject=f"✅ Nouveau Don Reçu de {don.nom}",
                 body=html_message,
                 from_email=settings.EMAIL_HOST_USER,
                 to=['ketchadjiguymartial@gmail.com'],
+                reply_to=[don.email],  # ← permet de répondre directement au donateur
             )
             email.content_subtype = 'html'  # Important pour envoyer du HTML
             email.send()
@@ -27,6 +28,7 @@ def formulaire_don(request):
             return redirect('dons:confirmation', don_id=don.id)
     else:
         form = DonForm()
+
     return render(request, 'dons/formulaire_don.html', {'form': form})
 
 def confirmation_don(request, don_id):

@@ -24,7 +24,7 @@ def sites_touristiques(request):
     sites = [
         {'nom': 'Le Palais Royal de Bangoulap', 'description': 'Centre spirituel et politique du village, la chefferie traditionnelle abrite la case du Fo (roi), les sanctuaires ancestraux, et la cour où se tiennent les cérémonies et danses rituelles.'},
         {'nom': 'Le Bois Sacré', 'description': 'Plusieurs placettes du village accueillent les danses rituelles telles que le Tso (danse des guerriers), le Méngou (danse féminine), et le Ben Skin, danse festive populaire.'},
-        {'nom': 'Les Sites de Danses Traditionnelles', 'description': 'Grotte refuge et lieu symbolique.'},
+        {'nom': 'Les Sites de Danses Traditionnelles', 'description': 'Plusieurs placettes du village accueillent les danses rituelles telles que le Tso (danse des guerriers), le Méngou (danse féminine), et le Ben Skin, danse festive populaire.'},
         {'nom': 'Sources d’Eau Sacrées et Cascades', 'description': 'Certaines sources naturelles sont considérées comme sacrées et curatives, liées à des légendes locales. Elles sont accessibles avec un guide et offrent un cadre naturel paisible.'},
         {'nom': 'Rochers et Collines de Mémoire', 'description': 'Ces lieux symboliques ont servi de refuges historiques ou d’espaces sacrés et offrent de magnifiques panoramas sur la région environnante.'},
         {'nom': 'Habitat Traditionnel Bamiléké', 'description': 'Maisons en banco aux toits bas, témoignages de l’architecture précoloniale, encore préservées par certaines familles qui acceptent les visites.'},
