@@ -46,6 +46,25 @@
         .emoji {
             margin-right: 6px;
         }
+
+        .project-box {
+            background-color: #f0fdf4;
+            border: 1px solid #c6f6d5;
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-top: 12px;
+        }
+
+        .project-box h4 {
+            color: #276749;
+            margin-bottom: 6px;
+        }
+
+        .project-box p {
+            font-size: 14px;
+            color: #444;
+            margin: 2px 0;
+        }
     </style>
 </head>
 <body><br><br>
@@ -68,10 +87,17 @@
             <span class="emoji">💳</span><span>Moyen :</span> {{ don.get_moyen_display }}
         </div>
         <div class="field">
-            <span class="emoji">📦</span><span>Projet soutenu :</span> {{ don.projet.nom }}
+            <span class="emoji">📦</span><span>Projet soutenu :</span> {{ don.projet.titre }}
         </div>
         <div class="field">
             <span class="emoji">🕒</span><span>Date :</span> {{ don.created_at|date:"d F Y à H:i" }}
+        </div>
+
+        <div class="project-box">
+            <h4>📌 Détails du projet soutenu</h4>
+            <p><strong>Titre :</strong> {{ don.projet.titre }}</p>
+            <p><strong>Date de lancement :</strong> {{ don.projet.date_lancement|date:"d F Y" }}</p>
+            <p><strong>Description :</strong><br> {{ don.projet.description }}</p>
         </div>
 
         <div class="footer">

@@ -1,21 +1,12 @@
-from django.shortcuts import render
+# projets/views.py
+from django.shortcuts import render, get_object_or_404
+from .models import Projet
 
 def liste_projets(request):
-    projets = [
-        {'titre': 'Forage d’eau potable à Lafeng', 'etat': 'En cours', 'image': 'images/projets/forage.jpg'},
-        {'titre': 'Réhabilitation de l’école primaire', 'etat': 'Terminé', 'image': 'images/projets/ecole.jpg'},
-    ]
+    projets = Projet.objects.all().order_by('-date_lancement')
     return render(request, 'projets/liste_projets.html', {'projets': projets})
 
-def detail_projet(request):
-    projet = {
-        'titre': 'Forage d’eau potable à Lafeng',
-        'etat': 'En cours',
-        'description': """
-            Ce projet vise à doter le quartier Lafeng d’un forage moderne permettant l’accès à l’eau potable
-            pour plus de 600 habitants. Il est soutenu par la Fondation Gacha et des donateurs de la diaspora.
-        """,
-        'partenaires': ['Fondation Gacha', 'CODEBA', 'Diaspora Europe'],
-        'image': 'images/projets/forage.jpg'
-    }
+def detail_projet(request, projet_id):
+    projet = get_object_or_404(Projet, id=projet_id)
     return render(request, 'projets/detail_projet.html', {'projet': projet})
+

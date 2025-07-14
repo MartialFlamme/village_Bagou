@@ -14,8 +14,8 @@ urlpatterns = [
     path('education/', include('education.urls')),
     path('galerie/', include('galerie.urls')),
     path("contact/", include("contact.urls", namespace="contact")),
-    path('dons/', include('dons.urls')),
-    path('projets/', include('projets.urls')),
+    path('dons/', include('dons.urls', namespace='dons')),
+    path('projets/', include('projets.urls', namespace='projets')),
 ]
 
 
