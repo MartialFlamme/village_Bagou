@@ -22,9 +22,9 @@
     <link rel="icon" href="{% static 'images/favicon.png' %}">
     <style>
         .logo{
-            border-radius: 70px;
-            width: 4%;
-            height: 4%;
+          width: 40px;
+          height: 40px;
+          border-radius: 9999px;
         }
         a{
             display: flex;
@@ -103,10 +103,15 @@
 
   <!-- ✅ HEADER -->
   <header id="site-header" class="fixed top-0 left-0 w-full bg-green-900 text-white z-50 transition-transform duration-300">
-        <a href="{% url 'core:accueil' %}" class="font-bold text-xl hover:text-yellow-300 transition">
-            BANGOULAP au coeur du livre &nbsp;<img src="{% static 'images/logo_village.jpg' %}" alt="Logo" class="logo"> 
-        </a>
   <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+
+    <!-- ✅ Logo + Titre visible en mobile et desktop -->
+    <div class="flex items-center space-x-3">
+      <a href="{% url 'core:accueil' %}" class="flex items-center space-x-2 hover:text-yellow-300 transition">
+        <img src="{% static 'images/logo_village.jpg' %}" alt="Logo" class="w-10 h-10 rounded-full border border-white shadow-sm">
+        <span class="text-lg font-semibold">BANGOULAP au cœur du livre</span> <!-- ✅ visible partout -->
+      </a>
+    </div>
 
     <!-- ✅ Menu Desktop -->
     <nav class="hidden md:flex space-x-4 text-sm">
@@ -162,7 +167,6 @@
         <div class="absolute hidden group-hover:block bg-green-800 mt-2 rounded shadow-md z-50">
           <a href="{% url 'education:projets_educatifs' %}" class="block px-4 py-2 text-sm hover:bg-green-700 transition">📚 Projets éducatifs</a>
           <a href="{% url 'education:academie_hoteliere' %}" class="block px-4 py-2 text-sm hover:bg-green-700 transition">🏫 Académie Hôtelière</a>
-          <a href="{% url 'education:infrastructures' %}">🏗️ Infrastructures</a> 
         </div>
       </div>
 
@@ -183,13 +187,12 @@
         </div>
       </div>
 
-      <!-- Autres -->
-      <a href="{% url 'contact:contact' %}" class="hover:text-yellow-300 transition">📬 Contact</a>
-      <div class="relative group">
+        <!-- Autres -->
+       <a href="{% url 'contact:contact' %}" class="hover:text-yellow-300 transition">📬 Contact</a>
+        <div class="relative group">
             <a href="{% url 'dons:formulaire' %}" class="hover:text-yellow-300 transition">💸 Dons</a>
             <div class="absolute hidden group-hover:block bg-green-800 mt-2 rounded shadow-md z-50">
                 <a href="{% url 'dons:formulaire' %}" class="block px-4 py-2 text-sm text-white hover:bg-green-700 transition">📝 Faire un don</a>
-                <!-- Aucun autre fichier HTML à lister ici sauf formulaire_don, confirmation_don est appelée par redirection -->
             </div>
         </div>
     </nav>
@@ -199,7 +202,7 @@
       <button id="menu-toggle" class="focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16" />
+                d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
     </div>
@@ -261,7 +264,6 @@
       <div class="ml-4 text-sm text-white py-2">
         <a href="{% url 'education:projets_educatifs' %}" class="block px-2 py-1 hover:bg-green-700 rounded">📚 Projets éducatifs</a>
         <a href="{% url 'education:academie_hoteliere' %}" class="block px-2 py-1 hover:bg-green-700 rounded">🏫 Académie Hôtelière</a>
-        <a href="{% url 'education:infrastructures' %}" class="block px-2 py-1 hover:bg-green-700 rounded">🏗️ Infrastructures</a>
       </div>
     </details>
 
@@ -292,7 +294,7 @@
     </details>
 
  </div>
-</header><br><br>
+</header>
 
 <!-- ✅ MAIN CONTENT -->
 <main class="flex-grow py-8">
@@ -305,7 +307,7 @@
 
 <!-- ✅ FOOTER -->
 <footer class="bg-green-800 text-white shadow sticky top-0 z-50">
-  <div class="container text-center">
+  <div class="container text-center"><br>
     <p class="mb-3">Copyright © 2025 Bangoulap</p>
     <p class="mb-3">Suivez-nous sur les réseaux sociaux</p>
     <div class="d-flex justify-content-center gap-3 flex-wrap">
@@ -321,7 +323,7 @@
       <a href="https://wa.me/237698275470" target="_blank">
         <i class="bi bi-whatsapp"></i>
       </a>
-    </div>
+    </div><br>
   </div>
 </footer>
 

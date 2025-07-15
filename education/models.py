@@ -7,14 +7,6 @@ class ProjetEducatif(models.Model):
     def __str__(self):
         return self.titre
 
-class Infrastructure(models.Model):
-    type = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='education/infrastructures/')
-    description = models.TextField()
-
-    def __str__(self):
-        return self.type
-
 class AcademieHoteliere(models.Model):
     nom = models.CharField(max_length=200)
     description = models.TextField()

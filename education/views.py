@@ -18,10 +18,3 @@ def academie_hoteliere(request):
     }
     return render(request, 'education/academie_hoteliere.html', {'contenu': contenu})
 
-def infrastructures(request):
-    infrastructures = [
-        {'type': 'Route rurale', 'image': 'images/education/route.jpg', 'description': 'Route reliant Bangoulap au marché régional.'},
-        {'type': 'École primaire', 'image': 'images/education/ecole.jpg', 'description': 'Rénovation des salles de classe et dotation en manuels.'},
-        {'type': 'Forage d’eau', 'image': 'images/education/forage.jpg', 'description': 'Accès à l’eau potable dans le quartier Lafeng.'},
-    ]
-    return render(request, 'education/infrastructures.html', {'infrastructures': infrastructures})

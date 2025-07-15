@@ -28,6 +28,7 @@ def contact_view(request):
             )
             email_message.send(fail_silently=False)
             sent = True
+            form = ContactForm()  # Réinitialise le formulaire pour vider les champs
     else:
         form = ContactForm()
 
